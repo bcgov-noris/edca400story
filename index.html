@@ -1,0 +1,157 @@
+
+            <!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap demo</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
+  <style>
+    /* Styling for left-hand pill tab group with arrows */
+/* !important added to styles that were being overridden on small screens */
+
+.nav-tabs,
+.nav-pills {
+    margin: 0;
+    padding: 0;
+    border: none;
+    background-color: unset;
+}
+
+.nav-tabs .nav-link {
+    color: #ffffff;
+    font-weight: bold;
+    background-color: var(--gov-primary-blue);
+    border-radius: .25rem .25rem 0 0;
+    border: none;
+    margin-right: .18rem;
+    padding: 0.68rem 1.18rem;
+    box-shadow: inset 0.18rem 0 0 0 var(--gov-primary-blue), inset -0.18rem 0 0 0 var(--gov-primary-blue), inset 0 0.18rem 0 0 var(--gov-primary-blue), inset 0 -0.18rem 0 0 transparent;
+    --max-lines: 2.5;
+    position: relative;
+    max-height: calc(var(--lh) * var(--max-lines));
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.nav-tabs .nav-link.active {
+
+    background-color: #ffffff !important;
+    color: #682D63 !important;
+    margin-bottom: -2px;
+    padding-bottom: 0.82rem;
+    box-shadow: inset 0.18rem 0 0 0 #682D63, inset -0.18rem 0 0 0 #682D63, inset 0 0.18rem 0 0 #682D63, inset 0 -0.18rem 0 0 #ffffff;
+}
+
+.nav-pills .nav-link {
+    background-color: #ffffff;
+    color: #682D63;
+    font-weight: bold;
+    border-radius: .25rem;
+    border: solid #682D63 2px !important;
+    position: relative;
+    text-align: left;
+    width: 100%;
+}
+
+#jumplist .nav-link {
+    font-size: 1rem;
+    line-height: 1;
+    padding: .5rem;
+    font-weight: 600;
+}
+
+#jumplist .nav-link:hover {
+    text-decoration: underline;
+}
+
+.nav-pills .nav-link.active {
+    color: #ffffff !important;
+    background-color: #682D63 !important;
+}
+
+/* Add indicator arrow for the active tab above md breakpoint */
+@media (min-width: 768px) {
+    .nav-pills .nav-link::before {
+        content: '';
+        display: block;
+        border-top: 8px solid transparent;
+        border-left: 10px solid #682D63;
+        border-bottom: 8px solid transparent;
+        position: absolute;
+        top: 50%;
+        right: -10px;
+        transform: translateY(-50%);
+        opacity: 0;
+    }
+}
+
+.nav-pills .nav-link.active::before {
+    opacity: 1;
+}
+
+.nav-pills li.nav-item+li.nav-item {
+    margin-top: .5rem;
+}
+
+.nav-pills.tab-content {
+    border-radius: 0.5rem;
+    padding: 1rem 1rem 0 1rem;
+    background-color: #ffffff;
+    border: #682D63 2px solid;
+    height: 100%;
+}
+
+li.nav-item+li.nav-item {
+    margin-top: 0;
+}
+  </style>
+  </head>
+  <body>
+    <div class="row my-5">
+                <div class="col-md-4">
+                    <ul class="nav nav-pills flex-column mb-2 mb-md-0" id="branches" role="tablist" aria-orientation="vertical">
+                        <li class="nav-item"><button class="nav-link active" id="legislative-tab" data-toggle="tab" href="#legislative" role="tab" aria-controls="legislative" aria-selected="true">Legislative branch</button></li>
+                        <li class="nav-item"><button class="nav-link" id="executive-tab" data-toggle="tab" href="#executive" role="tab" aria-controls="executive" aria-selected="false">Executive branch</button></li>
+                        <li class="nav-item"><button class="nav-link" id="judicial-tab" data-toggle="tab" href="#judicial" role="tab" aria-controls="judicial" aria-selected="false">Judicial branch</button></li>
+                    </ul>
+                </div>
+                <div class="col-md-8 pl-md-0">
+                    <div class="nav-pills tab-content" id="branchesContent">
+                        <div class="tab-pane fade show active" id="legislative" role="tabpanel" aria-labelledby="legislative-tab" tabindex="0">
+                            <h4 class="mt-0">The Legislative branch</h4>
+                            <p>The Legislative Assembly is B.C.'s provincial parliament. Currently there are 93 elected MLAs in the assembly. As a group, they have the power to debate and pass laws. </p>
+                            <h5>Operational roles</h5>
+                            <p>The Speaker and Officers of the Legislative Assembly perform important operational roles. For example, the Legislative Assembly adopts rules of parliamentary procedure called Standing Orders. The orders are designed to ensure all MLAs can take part in orderly Chamber debates.</p>
+                            <h5>Legislative Assembly etiquette</h5>
+                            <p> The Speaker enforces the standing orders which require MLAs to show respect for the Speaker and for each other. For example, members must not speak unless "recognized" (allowed to speak) by the Speaker. Members must not interrupt when the Speaker is speaking. </p>
+                        </div>
+                        <div class="tab-pane fade" id="executive" role="tabpanel" aria-labelledby="executive-tab" tabindex="0">
+                            <h4 class="mt-0">The Executive branch</h4>
+                            <p>The Executive Branch is generally referred to as the provincial government. The executive branch is made up of the Lieutenant Governor, the Premier, Cabinet, and the BC Public Service. The Premier acts as the head of the provincial government. The Premier is both the first minister and the chief officer of the executive branch.</p>
+                            <h5>Cabinet</h5>
+                            <p>The B.C. Executive Council, also known as Cabinet, consists of the Premier and all the Ministers.  Led by the Premier, together the Premier and Ministers run the provincial government. Cabinet sets priorities and works similarly to a board of directors. The Premier recommends MLAs (typically from their party), and the Lieutenant Governor appoints them as Cabinet ministers. Each Minister is responsible for a specific service area or ministry.</p>
+                            <h5>Ministers</h5>
+                            <p>All ministers take an oath of allegiance and confidentiality. They declare that they will not reveal confidential cabinet discussions when assuming office. Maintaining cabinet confidence extends to any public servant who attends cabinet or cabinet committee meetings or contributes to cabinet submissions. The minister is responsible to the Legislative Assembly for the actions and performance of their organization.</p>
+                            <h5>Individual ministerial responsibility</h5>
+                            <p>Ministers exercise considerable decision-making power. They are constitutionally responsible for the provision and conduct of provincial government. This is called the principle of individual ministerial responsibility. This principle ensures ministers are held accountable to the legislature and the public. The Legislative Assembly holds ministers personally and collectively responsible. Ministers are accountable for their own actions and for the actions of those within their ministries.</p>
+                            <h5>The role of cabinet</h5>
+                            <p>Cabinet is established under section 9 of the Constitution Act. It deliberates and makes decisions on proposals specific to government policy and legislative priorities, appointments, and overall provincial government direction.</p>
+                        </div>
+                        <div class="tab-pane fade" id="judicial" role="tabpanel" aria-labelledby="judicial-tab" tabindex="0">
+                            <h4 class="mt-0">The Judicial branch</h4>
+                            <p>The judicial system is independent of the executive and legislative branches of provincial government.</p>
+                            <h5>Governments must follow the law</h5>
+                            <p>In the Canadian political system, Crown governments are not above the law.</p>
+                            <p>Courts do not “make” policy, but they do have power to override laws and decisions that violate the Constitution including precedents established by past decisions or violating due process. </p>
+                            <h5>Accountability</h5>
+                            <p>Courts and the judicial system have authority to interpret laws, hear cases to determine innocence, guilt or liability. They hold the provincial government accountable. </p>
+                            <p>Provincial government policy teams consult with legal counsel to ensure any newly proposed policy and legislation follow the law.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js" integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q" crossorigin="anonymous"></script>
+  </body>
+</html>
