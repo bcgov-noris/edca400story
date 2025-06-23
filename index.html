@@ -1,79 +1,82 @@
-
-            <!doctype html>
+<!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Bootstrap demo</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>EDCA 400 2025K: Assignment 4 | Mock Interview Panel Presentation</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
+  <!-- Bootstrap icons CDN -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
   <style>
+    body {
+      font-size: 1rem;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5 {
+      color: #414288;
+    }
+
     /* Styling for left-hand pill tab group with arrows */
-/* !important added to styles that were being overridden on small screens */
+    /* !important added to styles that were being overridden on small screens */
+    .nav-tabs,
+    .nav-pills {
+      margin: 0;
+      padding: 0;
+      border: none;
+      background-color: unset;
+    }
 
-.nav-tabs,
-.nav-pills {
-    margin: 0;
-    padding: 0;
-    border: none;
-    background-color: unset;
-}
+    .nav-tabs .nav-link {
+      color: #ffffff;
+      font-weight: bold;
+      background-color: var(--gov-primary-blue);
+      border-radius: .25rem .25rem 0 0;
+      border: none;
+      margin-right: .18rem;
+      padding: 0.68rem 1.18rem;
+      box-shadow: inset 0.18rem 0 0 0 var(--gov-primary-blue), inset -0.18rem 0 0 0 var(--gov-primary-blue), inset 0 0.18rem 0 0 var(--gov-primary-blue), inset 0 -0.18rem 0 0 transparent;
+      --max-lines: 2.5;
+      position: relative;
+      max-height: calc(var(--lh) * var(--max-lines));
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
 
-.nav-tabs .nav-link {
-    color: #ffffff;
-    font-weight: bold;
-    background-color: var(--gov-primary-blue);
-    border-radius: .25rem .25rem 0 0;
-    border: none;
-    margin-right: .18rem;
-    padding: 0.68rem 1.18rem;
-    box-shadow: inset 0.18rem 0 0 0 var(--gov-primary-blue), inset -0.18rem 0 0 0 var(--gov-primary-blue), inset 0 0.18rem 0 0 var(--gov-primary-blue), inset 0 -0.18rem 0 0 transparent;
-    --max-lines: 2.5;
-    position: relative;
-    max-height: calc(var(--lh) * var(--max-lines));
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-}
+    .nav-tabs .nav-link.active {
+      background-color: #ffffff !important;
+      color: #682D63 !important;
+      margin-bottom: -2px;
+      padding-bottom: 0.82rem;
+      box-shadow: inset 0.18rem 0 0 0 #682D63, inset -0.18rem 0 0 0 #682D63, inset 0 0.18rem 0 0 #682D63, inset 0 -0.18rem 0 0 #ffffff;
+    }
 
-.nav-tabs .nav-link.active {
+    .nav-pills .nav-link {
+      background-color: #ffffff;
+      color: #682D63;
+      font-weight: bold;
+      border-radius: .25rem;
+      border: solid #682D63 2px !important;
+      position: relative;
+      text-align: left;
+      width: 100%;
+    }
 
-    background-color: #ffffff !important;
-    color: #682D63 !important;
-    margin-bottom: -2px;
-    padding-bottom: 0.82rem;
-    box-shadow: inset 0.18rem 0 0 0 #682D63, inset -0.18rem 0 0 0 #682D63, inset 0 0.18rem 0 0 #682D63, inset 0 -0.18rem 0 0 #ffffff;
-}
+    .nav-pills .nav-link.active {
+      color: #ffffff !important;
+      background-color: #682D63 !important;
+    }
 
-.nav-pills .nav-link {
-    background-color: #ffffff;
-    color: #682D63;
-    font-weight: bold;
-    border-radius: .25rem;
-    border: solid #682D63 2px !important;
-    position: relative;
-    text-align: left;
-    width: 100%;
-}
-
-#jumplist .nav-link {
-    font-size: 1rem;
-    line-height: 1;
-    padding: .5rem;
-    font-weight: 600;
-}
-
-#jumplist .nav-link:hover {
-    text-decoration: underline;
-}
-
-.nav-pills .nav-link.active {
-    color: #ffffff !important;
-    background-color: #682D63 !important;
-}
-
-/* Add indicator arrow for the active tab above md breakpoint */
-@media (min-width: 768px) {
-    .nav-pills .nav-link::before {
+    /* Add indicator arrow for the active tab above md breakpoint */
+    @media (min-width: 768px) {
+      .nav-pills .nav-link::before {
         content: '';
         display: block;
         border-top: 8px solid transparent;
@@ -84,74 +87,330 @@
         right: -10px;
         transform: translateY(-50%);
         opacity: 0;
+      }
     }
-}
 
-.nav-pills .nav-link.active::before {
-    opacity: 1;
-}
+    .nav-pills .nav-link.active::before {
+      opacity: 1;
+    }
 
-.nav-pills li.nav-item+li.nav-item {
-    margin-top: .5rem;
-}
+    .nav-pills li.nav-item+li.nav-item {
+      margin-top: .5rem;
+    }
 
-.nav-pills.tab-content {
-    border-radius: 0.5rem;
-    padding: 1rem 1rem 0 1rem;
-    background-color: #ffffff;
-    border: #682D63 2px solid;
-    height: 100%;
-}
+    .nav-pills.tab-content {
+      border-radius: 0.5rem;
+      padding: 1rem 1rem 0 1rem;
+      background-color: #ffffff;
+      border: #682D63 2px solid;
+      height: 100%;
+    }
 
-li.nav-item+li.nav-item {
-    margin-top: 0;
-}
+    li.nav-item+li.nav-item {
+      margin-top: 0;
+    }
   </style>
-  </head>
-  <body>
-    <div class="row my-5">
-                <div class="col-md-4">
-                    <ul class="nav nav-pills flex-column mb-2 mb-md-0" id="branches" role="tablist" aria-orientation="vertical">
-                        <li class="nav-item"><button class="nav-link active" id="legislative-tab" data-toggle="tab" href="#legislative" role="tab" aria-controls="legislative" aria-selected="true">Legislative branch</button></li>
-                        <li class="nav-item"><button class="nav-link" id="executive-tab" data-toggle="tab" href="#executive" role="tab" aria-controls="executive" aria-selected="false">Executive branch</button></li>
-                        <li class="nav-item"><button class="nav-link" id="judicial-tab" data-toggle="tab" href="#judicial" role="tab" aria-controls="judicial" aria-selected="false">Judicial branch</button></li>
-                    </ul>
+</head>
+
+<body>
+  <div id="content" style="background-color: #D6EBE5; font-size: 1.1rem;">
+    <div class="d-flex p-4 p-md-5 align-items-center" style="background-color: #5FB49C;">
+      <div class="container-lg" style="max-width: 100ch;">
+        <h1 class="text-black">EDCA 400 2025K: Assignment 4 Mock Interview Panel Presentation</h2>
+          <p class="fs-3 mb-0"> June 23, 2025 | Nori Sinclair</p>
+      </div>
+    </div>
+    <div class="container-md p-md-5 p-4 bg-light">
+      <div class="mx-auto" style="max-width: 100ch;">
+        <h2>Why is storytelling such a powerful tool in adult education?</h1>
+          <h3>Introduction</h3>
+          <p class="lead">This presentation explores Merriam and Baumgartner's Chapter 9 section on Narrative Learning
+            (2020, pp.
+            256-266). In the text, the authors use Clark's (2010) definition: "narrative learning means learning
+            through
+            stories" (as cited in Merriam & Baumgartner, 2020, p. 257).</p>
+          <p>While this presentation centres on my belief in the power of story, my other core
+            beliefs also connect to narrative learning.</p>
+          <h4>My core beliefs</h4>
+          <dl class="row">
+            <dt class="col-2 text-end">Agency</dt>
+            <dd class="col-10">I believe that education is an invitation and technology can help learners respond on
+              their
+              own terms.</dd>
+            <dt class="col-2 text-end">Connection</dt>
+            <dd class="col-10"> I believe that relationship, emotional safety, and a sense of belonging are
+              foundational to meaningful learning. </dd>
+            <dt class="col-2 text-end">Resilience</dt>
+            <dd class="col-10">I believe that learning is messy and often requires starting over or changing
+              direction.</dd>
+            <dt class="col-2 text-end">Purpose</dt>
+            <dd class="col-10"> I believe that learning should give people the tools, skills, and confidence to
+              translate
+              knowledge into thoughtful action.
+            </dd>
+            <dt class="col-2 text-end">Story</dt>
+            <dd class="col-10"> I believe that learning is most effective when storytelling is intentionally
+              incorporated, helping learners connect with ideas through real-life examples, reflections, and simple
+              narratives.
+            </dd>
+          </dl>
+      </div>
+    </div>
+    <div class="w-100 my-4 bg-light">
+      <div class="container p-md-5 p-4">
+        <h2>Narrative learning</h2>
+        <div class="row my-5">
+          <div class="col-md-4">
+            <ul class="nav nav-pills flex-column mb-2 mb-md-0" id="themes" role="tablist" aria-orientation="vertical">
+              <li class="nav-item"><button class="nav-link active" id="tab1-tab" data-bs-toggle="tab" href="#tab1"
+                  role="tab" aria-controls="tab1" aria-selected="true">Story as Sense-Making and Meaning-Making</button>
+              </li>
+              <li class="nav-item"><button class="nav-link" id="tab2-tab" data-bs-toggle="tab" href="#tab2" role="tab"
+                  aria-controls="tab2" aria-selected="false">Types and Layers of Narrative
+                </button></li>
+              <li class="nav-item"><button class="nav-link" id="tab3-tab" data-bs-toggle="tab" href="#tab3" role="tab"
+                  aria-controls="tab3" aria-selected="false">Story in Practice: Forms and Tools</button></li>
+              <li class="nav-item"><button class="nav-link" id="tab4-tab" data-bs-toggle="tab" href="#tab4" role="tab"
+                  aria-controls="tab4" aria-selected="false">Narrative and Self-Reflection</button></li>
+              <li class="nav-item"><button class="nav-link" id="tab5-tab" data-bs-toggle="tab" href="#tab5" role="tab"
+                  aria-controls="tab5" aria-selected="false">Narrative and Transformative Learning</button></li>
+            </ul>
+          </div>
+          <div class="col-md-8 pl-md-0">
+            <div class="nav-pills tab-content" id="themesContent">
+              <div class="tab-pane fade show active" id="tab1" role="tabpanel" aria-labelledby="tab1-tab" tabindex="0">
+                <h3 class="mt-0" style="color: #682D63;">Story as Sense-Making and Meaning-Making</h3>
+                <div class="d-flex my-3 ms-0">
+                  <i class="bi bi-quote me-3"
+                    style="font-size: 6rem; color:#682D63; line-height: 1; margin-top: -2%;"></i>
+                  <p class="fs-5">
+                    "Narratives are stories, "the oldest and most natural form of sense making" (Jonassen &
+                    Hernandez-Serrano,
+                    2002, p. 66), and they have a place in adult learning because stories enable us to make meaning of our
+                    lives" <br>
+                    <span class="d-block small text-end"><em>(Merriam & Baumgartner, 2020, p. 257)</em></span>
+                  </p>
+                  <i class="bi bi-quote ms-3" style="font-size: 6rem; color:#682D63; line-height: 1; rotate: 180deg;"></i>
                 </div>
-                <div class="col-md-8 pl-md-0">
-                    <div class="nav-pills tab-content" id="branchesContent">
-                        <div class="tab-pane fade show active" id="legislative" role="tabpanel" aria-labelledby="legislative-tab" tabindex="0">
-                            <h4 class="mt-0">The Legislative branch</h4>
-                            <p>The Legislative Assembly is B.C.'s provincial parliament. Currently there are 93 elected MLAs in the assembly. As a group, they have the power to debate and pass laws. </p>
-                            <h5>Operational roles</h5>
-                            <p>The Speaker and Officers of the Legislative Assembly perform important operational roles. For example, the Legislative Assembly adopts rules of parliamentary procedure called Standing Orders. The orders are designed to ensure all MLAs can take part in orderly Chamber debates.</p>
-                            <h5>Legislative Assembly etiquette</h5>
-                            <p> The Speaker enforces the standing orders which require MLAs to show respect for the Speaker and for each other. For example, members must not speak unless "recognized" (allowed to speak) by the Speaker. Members must not interrupt when the Speaker is speaking. </p>
-                        </div>
-                        <div class="tab-pane fade" id="executive" role="tabpanel" aria-labelledby="executive-tab" tabindex="0">
-                            <h4 class="mt-0">The Executive branch</h4>
-                            <p>The Executive Branch is generally referred to as the provincial government. The executive branch is made up of the Lieutenant Governor, the Premier, Cabinet, and the BC Public Service. The Premier acts as the head of the provincial government. The Premier is both the first minister and the chief officer of the executive branch.</p>
-                            <h5>Cabinet</h5>
-                            <p>The B.C. Executive Council, also known as Cabinet, consists of the Premier and all the Ministers.  Led by the Premier, together the Premier and Ministers run the provincial government. Cabinet sets priorities and works similarly to a board of directors. The Premier recommends MLAs (typically from their party), and the Lieutenant Governor appoints them as Cabinet ministers. Each Minister is responsible for a specific service area or ministry.</p>
-                            <h5>Ministers</h5>
-                            <p>All ministers take an oath of allegiance and confidentiality. They declare that they will not reveal confidential cabinet discussions when assuming office. Maintaining cabinet confidence extends to any public servant who attends cabinet or cabinet committee meetings or contributes to cabinet submissions. The minister is responsible to the Legislative Assembly for the actions and performance of their organization.</p>
-                            <h5>Individual ministerial responsibility</h5>
-                            <p>Ministers exercise considerable decision-making power. They are constitutionally responsible for the provision and conduct of provincial government. This is called the principle of individual ministerial responsibility. This principle ensures ministers are held accountable to the legislature and the public. The Legislative Assembly holds ministers personally and collectively responsible. Ministers are accountable for their own actions and for the actions of those within their ministries.</p>
-                            <h5>The role of cabinet</h5>
-                            <p>Cabinet is established under section 9 of the Constitution Act. It deliberates and makes decisions on proposals specific to government policy and legislative priorities, appointments, and overall provincial government direction.</p>
-                        </div>
-                        <div class="tab-pane fade" id="judicial" role="tabpanel" aria-labelledby="judicial-tab" tabindex="0">
-                            <h4 class="mt-0">The Judicial branch</h4>
-                            <p>The judicial system is independent of the executive and legislative branches of provincial government.</p>
-                            <h5>Governments must follow the law</h5>
-                            <p>In the Canadian political system, Crown governments are not above the law.</p>
-                            <p>Courts do not “make” policy, but they do have power to override laws and decisions that violate the Constitution including precedents established by past decisions or violating due process. </p>
-                            <h5>Accountability</h5>
-                            <p>Courts and the judicial system have authority to interpret laws, hear cases to determine innocence, guilt or liability. They hold the provincial government accountable. </p>
-                            <p>Provincial government policy teams consult with legal counsel to ensure any newly proposed policy and legislation follow the law.</p>
-                        </div>
-                    </div>
+                <ul>
+                  <li>Our lives are made up of stories: our memories, our dreams, our beliefs. If learning can tap into
+                    this
+                    core
+                    human experience, it is more likely to have a lasting impact.</li>
+                  <li>Along with embodied and spiritual learning, narrative learning is part of the nonscientific. It is
+                    more
+                    concerned with human meaning than discrete facts or logic (Merriam & Baumgartner, 2020, p. 257)</li>
+                </ul>
+                <h4>Core belief: Story</h4>
+                <p> This element of narrative learning ties into my core belief of story. I get excited by the possible
+                  benefits of incorporating story-telling into my course design. I want learners to pause and make sense
+                  of how new ideas fit with what they already know or believe, and how their own story might be changing.
+                </p>
+                <p></p>As Daloz (2012) states, "A good story transforms our vision of the possible and provides us with a
+                map for the journey ahead" (as cited in Merriam & Baumgartner, 2020, p. 173). </p>
+              </div>
+              <div class="tab-pane fade" id="tab2" role="tabpanel" aria-labelledby="tab2-tab" tabindex="0">
+                <h3 class="mt-0" style="color: #682D63;">Types and Layers of Narrative</h3>
+                <div class="d-flex my-3 ms-0">
+                  <i class="bi bi-quote me-3"
+                    style="font-size: 6rem; color:#682D63; line-height: 1; margin-top: -2%;"></i>
+                  <p class="fs-5">
+                    "Narratives are stories, "the oldest and most natural form of sense making" (Jonassen &
+                    Hernandez-Serrano,
+                    2002, p. 66), and they have a place in adult learning because stories enable us to make meaning of our
+                    lives" <br>
+                    <span class="d-block small text-end"><em>(Merriam & Baumgartner, 2020, p. 257)</em></span>
+                  </p>
+                  <i class="bi bi-quote ms-3" style="font-size: 6rem; color:#682D63; line-height: 1; rotate: 180deg;"></i>
                 </div>
+                <p>"Personal narratives involve reflection on one's life story and can be empowering. This process,
+                  Rossiter
+                  and Clark assert, "is at the heart of learning and change in adulthood" (p. 25)" (Merriam &
+                  Baumgartner,
+                  2020, p. 258)</p>
+                <p>Rossiter and Clark (2007) organize narrative into four types: cultural, familial, individual, and
+                  organizational (Merriam & Baumgartner, 2020, p. 257)</p>
+                <p>Cultural narratives: the ideas that we take for granted, that we are immersed in, invisible like the
+                  air
+                  we breathe (Merriam & Baumgartner, 2020, p. 257)</p>
+                <p>Family narratives: values and beliefs, customs, roles and rituals (Merriam & Baumgartner, 2020, p.
+                  258)
+                </p>
+                <p>Individual narratives: the stories we create about our own lives. When incorporating reflection, this
+                  can
+                  be empowering (Merriam & Baumgartner, 2020, p. 258)</p>
+                <p>Organizational narratives: stories also structure meaning within the organizations in our society
+                  (Merriam & Baumgartner, 2020, p. 258)</p>
+                <p>Along with my core belief around story, the types and layers of narrative connect with my core belief
+                  of
+                  purpose: I believe that learning should give people the tools, skills, and confidence to translate
+                  knowledge into thoughtful action. In my work in corporate learning, I often have to navigate the
+                  tension
+                  between learner needs and organizational goals. The stories that we tell ourselves and each other can
+                  help
+                  shift an organizational narrative and drive lasting impact.</p>
+              </div>
+              <div class="tab-pane fade" id="tab3" role="tabpanel" aria-labelledby="tab3-tab" tabindex="0">
+                <h3 class="mt-0" style="color: #682D63;">Story in Practice: Forms and Tools</h3>
+                <div class="d-flex my-3 ms-0">
+                  <i class="bi bi-quote me-3"
+                    style="font-size: 6rem; color:#682D63; line-height: 1; margin-top: -2%;"></i>
+                  <p class="fs-5">
+                    "Narratives are stories, "the oldest and most natural form of sense making" (Jonassen &
+                    Hernandez-Serrano,
+                    2002, p. 66), and they have a place in adult learning because stories enable us to make meaning of our
+                    lives" <br>
+                    <span class="d-block small text-end"><em>(Merriam & Baumgartner, 2020, p. 257)</em></span>
+                  </p>
+                  <i class="bi bi-quote ms-3" style="font-size: 6rem; color:#682D63; line-height: 1; rotate: 180deg;"></i>
+                </div><p>"Using stories to engage students in ideas that are part of course content may be the only way to
+                  allow
+                  understanding to occur. It is also a powerful means of making connections not only with ideas but with
+                  other learners, perhaps ultimately creating a learning community. Whether these stories are generated
+                  by
+                  students themselves, are case studies, or are fictional accounts, they draw us in, they allow us to
+                  see
+                  from another's perspective." (Merriam & Baumgartner, 2020, p. 260)</p>
+                <p>De Groot (2018) names four modes of narrative learning: learning from narratives/stories, learning
+                  through narrating one's own story, learning by recognizing that one's citizenship identity is
+                  narratively
+                  constituted, and "learning to position existing societal and cultural narratives in their cultural and
+                  historical context" (p. 455)." (Merriam & Baumgartner, 2020, p. 259)</p>
+                <p>Rossiter and Clark (2007) identify three modes in which stories appear in practice: "storying" the
+                  curriculum, storytelling, and autobiography." (Merriam & Baumgartner, 2020, p. 259)</p>
+                <p>Jonassen and Hernandez-Serrano (2002) discuss how things like case studies and scenarios can expand
+                  our
+                  understanding (as cited in Merriam & Baumgartner, 2020, p. 260).</p>
+                <p>These examples of narrative learning types also support my core belief of connection: I believe that
+                  relationship, emotional safety, and a sense of belonging are foundational to meaningful learning. In
+                  my
+                  role, I rarely work in direct contact with learners. While I can include prompts and case studies that
+                  reflect warmth and compassion, I can't always create emotional safety through live interaction. I find
+                  it
+                  helpful to remember that learning relationships can be formed in all types of interactions, even
+                  asynchronous ones.</p>
+              </div>
+              <div class="tab-pane fade" id="tab4" role="tabpanel" aria-labelledby="tab4-tab" tabindex="0">
+                <h3 class="mt-0" style="color: #682D63;">Narrative and Self-Reflection</h3>
+                <div class="d-flex my-3 ms-0">
+                  <i class="bi bi-quote me-3"
+                    style="font-size: 6rem; color:#682D63; line-height: 1; margin-top: -2%;"></i>
+                  <p class="fs-5">
+                    "Narratives are stories, "the oldest and most natural form of sense making" (Jonassen &
+                    Hernandez-Serrano,
+                    2002, p. 66), and they have a place in adult learning because stories enable us to make meaning of our
+                    lives" <br>
+                    <span class="d-block small text-end"><em>(Merriam & Baumgartner, 2020, p. 257)</em></span>
+                  </p>
+                  <i class="bi bi-quote ms-3" style="font-size: 6rem; color:#682D63; line-height: 1; rotate: 180deg;"></i>
+                </div><p>"While we do not have control over many of the events or circumstances of our lives, we do have some
+                  choice as to how we interpret them. If something unpleasant happens it is not imperative that we will
+                  see
+                  it as the end of all happiness forever and ever. This realization of choice in meaning making is one
+                  of
+                  the most valuable aspects of the narrative orientation" (Rossiter & Clark, 2007, p. 34, as cited in
+                  Merriam & Baumgartner, 2020, p. 264).</p>
+                <p>Journaling is an effective strategy and counselling tool for dealing with the challenges of everyday
+                  life. (Merriam & Baumgartner, 2020, p. 261)</p>
+                <p>Individual self-reflection can help adults develop a narrative framework for their lives (Merriam &
+                  Baumgartner, 2020, p. 264)</p>
+                <p>This element of self-reflection is closely tied to my core belief of resilience: I believe that
+                  learning
+                  is messy and often requires starting over or changing direction. Change is a normal and necessary part
+                  of
+                  learning design, not a sign of failure. Confidence and growth are built by working through problems
+                  with
+                  self-compassion, not avoiding them because it's not perfect the first time.</p>
+              </div>
+              <div class="tab-pane fade" id="tab5" role="tabpanel" aria-labelledby="tab5-tab" tabindex="0">
+                <h3 class="mt-0" style="color: #682D63;">Narrative and Transformative Learning</h3>
+                <div class="d-flex my-3 ms-0">
+                  <i class="bi bi-quote me-3"
+                    style="font-size: 6rem; color:#682D63; line-height: 1; margin-top: -2%;"></i>
+                  <p class="fs-5">
+                    "Narratives are stories, "the oldest and most natural form of sense making" (Jonassen &
+                    Hernandez-Serrano,
+                    2002, p. 66), and they have a place in adult learning because stories enable us to make meaning of our
+                    lives" <br>
+                    <span class="d-block small text-end"><em>(Merriam & Baumgartner, 2020, p. 257)</em></span>
+                  </p>
+                  <i class="bi bi-quote ms-3" style="font-size: 6rem; color:#682D63; line-height: 1; rotate: 180deg;"></i>
+                </div><p>"Whereas Mezirow's [transformational learning] process most often begins with a "disorienting
+                  dilemma"
+                  that causes us to examine our underlying assumptions and values, Randall suggests that when we
+                  encounter a
+                  life experience that cannot be accommodated by our old story of ourselves and the world, we seek to
+                  restory our lives" (Merriam & Baumgartner, 2020, pp. 264-265)</p>
+                <p>"Restorying" involves changing the dominant story we tell about ourselves when our current story is
+                  no
+                  longer coherent (Merriam & Baumgartner, 2020, p. 265)</p>
+                <p>Hearing other people's stories expose learners to other perspectives on the world, which is key to
+                  critical self-reflection and transformative learning (Merriam & Baumgartner, 2020, p. 265)</p>
+                <p>The stories of our lives also include cognitive, emotional, embodied and spiritual dimensions
+                  (Merriam &
+                  Baumgartner, 2020, p. 265)</p>
+                <p>With its deeply personal element of self-reflection or restorying, I find this aspect of narrative
+                  learning to connect with my core belief of Agency: I believe that education is an invitation and
+                  technology can help learners respond on their own terms. To bring this into my practice, I try to
+                  offer a
+                  variety of learning activities so that everyone can find something that meets their needs. Jarvis
+                  includes
+                  both experimental learning (the result of a person experimenting on the environment) and reflective
+                  practice (thinking about and monitoring one's practice as it is happening) with what he conceives as
+                  the
+                  highest forms of learning (as cited in Merriam & Baumgartner, 2020, p. 203). I look for ways to
+                  incorporate both types of learning into the large-scale, asynchronous courses I design.</p>
+              </div>
             </div>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js" integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q" crossorigin="anonymous"></script>
-  </body>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="container-md p-md-5 p-4 bg-light">
+      <div class="mx-auto" style="max-width: 100ch;">
+        <h2>Conclusion: Why Story Matters for Adult Education</h2>
+        <div class="d-flex my-4 ms-0">
+                  <i class="bi bi-quote me-3"
+                    style="font-size: 6rem; color:#414288; line-height: 1; margin-top: -2%;"></i>
+                  <p class="fs-5">
+                    "Narratives are stories, "the oldest and most natural form of sense making" (Jonassen &
+                    Hernandez-Serrano,
+                    2002, p. 66), and they have a place in adult learning because stories enable us to make meaning of our
+                    lives" <br>
+                    <span class="d-block small text-end"><em>(Merriam & Baumgartner, 2020, p. 257)</em></span>
+                  </p>
+                  <i class="bi bi-quote ms-3" style="font-size: 6rem; color:#414288; line-height: 1; rotate: 180deg;"></i>
+                </div><p>"To summarize this section on narrative learning, it is clear that adult educators have a means of
+          facilitating
+          learning that all adults can relate to—stories that surround us, that define us, that we can construct,
+          analyze,
+          reflect upon, and learn from. Stories can be used to understand content, ourselves, and the world in which we
+          live. Narratives are also windows into development and transformational learning. They enable us to make sense
+          of
+          our experience, which is what adult learning is all about." (Merriam & Baumgartner, 2020, p. 266)</p>
+        <p>I can't think of anything that drives adult learning more than storytelling. It is tricky to include aspects
+          of
+          narrative learning in course design as it doesn't fit neatly into a box. There is no exact formula for how to
+          incorporate stories in my work in corporate learning.</p>
+        <p>But when it is used successfully, learning has the potential to reach the level of what Cajete describes:
+          "Education has been, and continues to be, a grand story, a search for meaning, and an essential food for the
+          soul"
+          (2010, p. 1131, as cited in Merriam & Baumgartner, 2020, p. 61). This is the kind of soul-feeding learning I
+          aspire to create in my practice.</p>
+        <hr>
+        <h2>References</h2>
+        <p>Merriam, S. B., & Baumgartner, L. M. (2020). Learning in adulthood: A comprehensive guide (4th ed.).
+          Jossey-Bass.
+        </p>
+      </div>
+    </div>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+    integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.min.js"
+    integrity="sha384-7qAoOXltbVP82dhxHAUje59V5r2YsVfBafyUDxEdApLPmcdhBPg1DKg1ERo0BZlK"
+    crossorigin="anonymous"></script>
+</body>
+
 </html>
