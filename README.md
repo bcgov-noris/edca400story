@@ -17,3 +17,5 @@ June 2025
 
 Visit the presentation at:
 👉 **[https://bcgov-noris.github.io/edca400story/](https://bcgov-noris.github.io/edca400story/)**
+
+Note: This site requires an internet connection to load fonts, icons, and the Bootstrap framework from external CDNs.
